@@ -137,7 +137,8 @@ def stHarmonic(frame, fs):
         m0 = a[0]
     if M > len(R):
         M = len(R) - 1
-
+    
+    M = int(M)
     Gamma = numpy.zeros((M), dtype=numpy.float64)
     CSum = numpy.cumsum(frame ** 2)
     Gamma[m0:M] = R[m0:M] / (numpy.sqrt((g * CSum[M:m0:-1])) + eps)
